@@ -6,7 +6,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.5
+// @version             2.6
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
