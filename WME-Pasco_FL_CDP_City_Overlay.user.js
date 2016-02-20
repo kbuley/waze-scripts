@@ -6,7 +6,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.1
+// @version             2.2
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -1210,8 +1210,6 @@ var VPasadenaHillsCDP =  [{lon:'-82.188835',lat:'28.281775'},{lon:'-82.18828',la
     AddPolygon(_mapLayer, VHudsonCDP,"#FFFFFF"," Hudson");
     AddPolygon(_mapLayer, VPasadenaHillsCDP,"#FFFFFF"," Pasadena Hills");
 
-}
-    
     
     setTimeout(function(){CurrentLocation(_mapLayer);},3000);
     mro_Map.events.register("moveend", Waze.map, function(){CurrentLocation(_mapLayer);});
