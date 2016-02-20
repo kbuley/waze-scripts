@@ -2,11 +2,11 @@
 // @name                Pasco, FL City/CDP Overlay
 // @author              IAmTheKLB from davielde and rickzabel template
 // @namespace           https://greasyfork.org/en/users/30893-kevin-buley
-// @description         Creates polygon layers for Cities, Towns, and large CDPs in Pasco Co, FL
+// @description         Creates polygon layer for Cities, Towns, and large CDPs in Pasco Co, FL
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.3
+// @version             2.4
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
