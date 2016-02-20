@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name                Pasco, FL City/CDP Overlay
-// @author		        IAmTheKLB from davielde and rickzabel template
+// @author              IAmTheKLB from davielde and rickzabel template
 // @namespace           https://greasyfork.org/en/users/30893-kevin-buley
 // @description         Creates polygon layers for Cities, Towns, and large CDPs in Pasco Co, FL
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.2
+// @version             2.3
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -102,10 +102,10 @@ function CurrentLocation(_mapLayer){
 				var n3 = res.length;
 				res2 = res.substring(rescount+2, n3);
 			}
-			LocationLabel = 'City/CDP - ' + _mapLayer.features[i].attributes.name + ' - ' + res2;
+			LocationLabel = 'City/CDP=' + _mapLayer.features[i].attributes.name + ' - ' + res2;
 
 		} else {
-			LocationLabel = 'City/CDP - ' + _mapLayer.features[i].attributes.name + ' - ' + $('#topbar-container > div > div.location-info-region > div').text();
+			LocationLabel = 'City/CDP=' + _mapLayer.features[i].attributes.name + ' - ' + $('#topbar-container > div > div.location-info-region > div').text();
 						
 		}	
 		setTimeout(function(){$('#topbar-container > div > div.location-info-region > div').text(LocationLabel);},200);
