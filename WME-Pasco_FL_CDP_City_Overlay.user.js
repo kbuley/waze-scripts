@@ -6,7 +6,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             2.0
+// @version             2.1
 // @grant               none
 // @copyright           2014 davielde
 // ==/UserScript==
@@ -1195,20 +1195,20 @@ var VPasadenaHillsCDP =  [{lon:'-82.188835',lat:'28.281775'},{lon:'-82.18828',la
     AddPolygon(_mapLayer, VDadeCitycity_2,"#FFFFFF"," Dade City");
     AddPolygon(_mapLayer, VDadeCitycity_3,"#FFFFFF"," Dade City");
     AddPolygon(_mapLayer, VStLeotown_0,"#FFFFFF"," St. Leo");
-AddPolygon(_mapLayer, VBeaconSquareCDP,"#FFFFFF"," Beacon Square");
-AddPolygon(_mapLayer, VOdessaCDP,"#FFFFFF"," Odessa");
-AddPolygon(_mapLayer, VTrinityCDP,"#FFFFFF"," Trinity"); 
-AddPolygon(_mapLayer, VJasmineEstatesCDP,"#FFFFFF"," Jasmine Estates");
-AddPolygon(_mapLayer, VBayonetPointCDP,"#FFFFFF"," Bayonet Point");
-AddPolygon(_mapLayer, VHolidayCDP,"#FFFFFF"," Holiday");
-AddPolygon(_mapLayer, VZephyrhillsSouthCDP,"#FFFFFF"," Zephyrhills South" );
-AddPolygon(_mapLayer, VShadyHillsCDP,"#FFFFFF"," Shady Hills");
-AddPolygon(_mapLayer, VElfersCDP,"#FFFFFF"," Elfers");
-AddPolygon(_mapLayer, VLandOLakesCDP,"#FFFFFF"," Land O' Lakes");
-AddPolygon(_mapLayer, VNewPortRicheyEastCDP,"#FFFFFF"," New Port Richey East");
-AddPolygon(_mapLayer, VWesleyChapelCDP,"#FFFFFF"," Wesley Chapel");
-AddPolygon(_mapLayer, VHudsonCDP,"#FFFFFF"," Hudson");
-AddPolygon(_mapLayer, VPasadenaHillsCDP,"#FFFFFF"," Pasadena Hills");
+    AddPolygon(_mapLayer, VBeaconSquareCDP,"#FFFFFF"," Beacon Square");
+    AddPolygon(_mapLayer, VOdessaCDP,"#FFFFFF"," Odessa");
+    AddPolygon(_mapLayer, VTrinityCDP,"#FFFFFF"," Trinity"); 
+    AddPolygon(_mapLayer, VJasmineEstatesCDP,"#FFFFFF"," Jasmine Estates");
+    AddPolygon(_mapLayer, VBayonetPointCDP,"#FFFFFF"," Bayonet Point");
+    AddPolygon(_mapLayer, VHolidayCDP,"#FFFFFF"," Holiday");
+    AddPolygon(_mapLayer, VZephyrhillsSouthCDP,"#FFFFFF"," Zephyrhills South" );
+    AddPolygon(_mapLayer, VShadyHillsCDP,"#FFFFFF"," Shady Hills");
+    AddPolygon(_mapLayer, VElfersCDP,"#FFFFFF"," Elfers");
+    AddPolygon(_mapLayer, VLandOLakesCDP,"#FFFFFF"," Land O' Lakes");
+    AddPolygon(_mapLayer, VNewPortRicheyEastCDP,"#FFFFFF"," New Port Richey East");
+    AddPolygon(_mapLayer, VWesleyChapelCDP,"#FFFFFF"," Wesley Chapel");
+    AddPolygon(_mapLayer, VHudsonCDP,"#FFFFFF"," Hudson");
+    AddPolygon(_mapLayer, VPasadenaHillsCDP,"#FFFFFF"," Pasadena Hills");
 
 }
     
