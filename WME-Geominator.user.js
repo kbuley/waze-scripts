@@ -7,7 +7,7 @@
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             0.03
+// @version             0.04
 // @grant               none
 // @copyright           2016 Kevin Buley
 // ==/UserScript==
@@ -176,8 +176,12 @@ function deleteLayer() {
 ///     enabled:        // is this layer turned on?
 ///     color:          // the color for this layer
 ///     
-function initLayers(myTab) {
-    var layers = (localStorage.GeominatorLayers) ? JSON.parse(localStorage.GeominatorLayers) : {};
+function initLayers(geomTab) {
+    if ('undefined' === typeof localStorage.GeominatorLayers || !IsJsonString(localStorage.getItem('GeominatorLayers'))) {
+        localStorage.setItem('GeominatorLayers', '[]'); 
+        debugLog("Something went wrong parsing the localstorage!");
+    }
+    var layers = JSON.parse(localStorage.GeominatorLayers);
     var layerList = document.createElement('ul');
     for (var i = 0; i < layers.length; i++) {
         var lineItem = document.createElement('li');
@@ -188,21 +192,53 @@ function initLayers(myTab) {
         checkBox.checked = layers[i].enabled;
         
         var checkLabel = document.createElement('label');
-        checkLabel.htmlFor = "lb_geominator_" + layers[i].id;
+        checkLabel.htmlFor = "cb_geominator_" + layers[i].id;
+        checkLabel.appendChild(document.createTextNode(layers[i].title));
+
         
         
         layerList.insertAdjacentElement('beforeend', lineItem);
         lineItem.insertAdjacentElement('afterbegin', checkLabel);
-        lineItem.insertAdjacentElement('afterbeging', checkBox);
-        
-        myTab.AppendElement(lineItem);
-        
+        lineItem.insertAdjacentElement('afterbegin', checkBox);
     }
-    return;
+    geomTab.insertAdjacentElement('beforeend', layerList);
+   return;
+}
+
+    function IsJsonString(str) {
+        try {
+            JSON.parse(str);
+        } catch (e) {
+            return false;
+        }
+        return true;
+    }
+
+function setTestData() {
+    var testLayerData = [];
+    var testLayer1 = {};
+    testLayer1.id=1;
+    testLayer1.layerData = '{1,2,4,6,23,67,2,664,2565,2}';
+    testLayer1.layerType = 'GeoJSON';
+    testLayer1.title = 'Map Layer 1';
+    testLayer1.enabled = true;
+    testLayer1.color = 'red';
+    testLayerData[0] = testLayer1;
+    testLayerData[1] = {};
+    testLayerData[1].id=2;
+    testLayerData[1].layerData = '{14,232,34,56,2,6,21,64,25,21}';
+    testLayerData[1].layerType = 'GeoJSON';
+    testLayerData[1].title = 'some other layer';
+    testLayerData[1].enabled = false;
+    testLayerData[1].color = 'blue';
+    localStorage.setItem('GeominatorLayers', JSON.stringify(testLayerData, null, 4));
 }
 
 function init() {
     debugLog("Starting up!");
+    if ('undefined' === typeof localStorage.GeominatorLayers || !IsJsonString(localStorage.getItem('GeominatorLayers'))) {
+        setTestData();
+    }
     initTab();
 }
 awaitLogin();
