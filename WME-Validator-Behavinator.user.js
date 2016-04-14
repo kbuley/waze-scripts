@@ -1,13 +1,13 @@
 /* global Waze */
 // ==UserScript==
 // @name         WME Validator Behavinator
-// @namespace    http://tampermonkey.net/
+// @namespace    https://greasyfork.org/en/users/30893-kevin-buley
 // @description  Force Validator to live in a tab like everyone else
 // @author       Kevin Buley
-// @include      https://www.waze.com/editor/*
-// @include      https://www.waze.com/*/editor/*
+// @include      https://www.waze.com/*editor/*
 // @include      https://editor-beta.waze.com/*
-// @version      0.03
+// @exclude      https://www.waze.com/user/*editor/*
+// @version      0.04
 // @grant        none
 // @copyright    2016 Kevin Buley
 // ==/UserScript==
