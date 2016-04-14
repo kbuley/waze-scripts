@@ -7,7 +7,7 @@
 // @include      https://www.waze.com/*editor/*
 // @include      https://editor-beta.waze.com/*
 // @exclude      https://www.waze.com/user/*editor/*
-// @version      0.04
+// @version      0.05
 // @grant        none
 // @copyright    2016 Kevin Buley
 // ==/UserScript==
@@ -53,7 +53,7 @@
             return;
         }
 
-        var Validator = $($('a:contains("translate Validator")').filter(function(){ return $(this).children().length === 0;}).parent().parent().parent())[0];
+        var Validator = $("a[href*='76488']")[0].parentNode.parentNode.parentNode;
         if (typeof Validator === 'undefined') {
             setTimeout(awaitLogin, 100);
             return;
@@ -120,8 +120,8 @@
 
     function WrapValidator(myTab) {
         // Find out where validator is
-        var Validator = $($('a:contains("translate Validator")').filter(function(){ return $(this).children().length === 0;}).parent().parent().parent())[0];
-        if (Validator.parentElement.id === 'user-details') {
+        var Validator = $("a[href*='76488']")[0].parentNode.parentNode.parentNode;
+        if (Validator.parentElement.id != 'sidepanel-behavinator') {
             while (Validator.childNodes.length > 0) {
                 myTab.appendChild(Validator.childNodes[0]);
             }
