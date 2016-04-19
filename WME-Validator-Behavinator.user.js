@@ -6,8 +6,8 @@
 // @author       Kevin Buley
 // @include      https://www.waze.com/*editor/*
 // @include      https://editor-beta.waze.com/*
-// @exclude      https://www.waze.com/user/*editor/*
-// @version      0.06
+// @exclude      https://www.waze.com/*user/editor/*
+// @version      0.07
 // @grant        none
 // @copyright    2016 Kevin Buley
 // ==/UserScript==
