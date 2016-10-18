@@ -1,13 +1,13 @@
 /* global Waze */
 // ==UserScript==
 // @name                WME Geominator
-// @author              IAmTheKLB
+// @author              k-l-b
 // @namespace           https://greasyfork.org/en/users/30893-kevin-buley
 // @description         Import geojson and manage geojson files
 // @include             https://www.waze.com/editor/*
 // @include             https://www.waze.com/*/editor/*
 // @include             https://editor-beta.waze.com/*
-// @version             0.04
+// @version             0.05
 // @grant               none
 // @copyright           2016 Kevin Buley
 // ==/UserScript==
@@ -78,47 +78,21 @@ function awaitLogin(e) {
         setTimeout(awaitLogin, 100);
         return;
     }
+    
+     if (getElementsByClassName('tab-content')[0] === undefined) {
+         setTimeout(init, 1000);
+     }
 
     init();
 }
 
 
-/**
- * Get handles for the tab and panel controls
- * 
- * @param e Default event object
- * @returns An object containing the elements for user-info, nav-tabs, and tab-content
- */
-function getPanelHandles(e) {
-    if (getId('user-info') === null) {
-        setTimeout(getPanelHandles, 100);
-    }
-    
-    var userTabs = getId('user-info');
-    
-    if (getElementsByClassName('nav-tabs',userTabs)[0] === undefined) {
-        setTimeout(getPanelHandles, 100);
-    }
-    
-    var navTabs = getElementsByClassName('nav-tabs',userTabs)[0];
-    
-    if (getElementsByClassName('tab-content', userTabs)[0] === undefined) {
-        setTimeout(getPanelHandles, 100);
-    }
-
-    var tabContent = getElementsByClassName('tab-content', userTabs)[0];
-    
-    return {
-        'userTabs' : userTabs,
-        'navTabs' : navTabs,
-        'tabContent' : tabContent    
-    };
-}
-
 function initTab() {
     try {
         // Get handles on the tabs and panels
-        var tabHandles = getPanelHandles();
+        var userTabs = getId('user-info');
+        var navTabs = getElementsByClassName('nav-tabs',userTabs)[0];
+        var tabContent = getElementsByClassName('tab-content', userTabs)[0];
         
         // Create the tab
         var myTab = document.createElement('li');
@@ -138,11 +112,11 @@ function initTab() {
         
 
         // Attach the tab to the tab bar
-        tabHandles.navTabs.appendChild(myTab);
+        navTabs.appendChild(myTab);
         // Attach the content to the panel
         myTabPanel.appendChild(myTabContent);
         // Attach the panel to the sidebar 
-        tabHandles.tabContent.appendChild(myTabPanel);
+        tabContent.appendChild(myTabPanel);
     } catch (err) {
         debugLog(err.message);
     }
